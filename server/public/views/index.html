@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>3</title>
+    <script src="/vendor/angular.min.js"></script>
+    <script src="/scripts/clientapp.js"></script>
+    <script src="/scripts/controllers/heroController.js"></script>
+
+    <link rel="stylesheet" href="/vendor/bootstrap.min.css" />
+
+
+  </head>
+  <body ng-app="heroApp">
+    <main ng-controller="heroController">
+
+
+
+      <section id="heroSubmission">
+        <h1>Submit a Hero</h1>
+        <form id="heroForm">
+          <label for="alias">Alias:</label>
+          <input type="text" id="alias" name="alias" ng-model="heroInfo.alias" />
+
+          <label for="firstname">First Name:</label>
+          <input type="text" id="firstname" name="firstname" ng-model="heroInfo.first" />
+
+          <label for="lastname">Last Name:</label>
+          <input type="text" id="lastname" name="lastname" ng-model="heroInfo.last" />
+
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" ng-model="heroInfo.city" />
+
+
+          <button ng-click="addHero()">Add Hero</button>
+        </form>
+      </section>
+      <section id = "display">
+        <div ng-repeat ="hero in heroes">
+          <p>
+            {{hero.alias}}
+            {{hero.city}}
+            {{hero.firstname}}
+            {{hero.lastname}}
+          </p>
+        </div>
+
+
+
+
+
+
+      </section>
+
+
+    </main>
+  </body>
+</html>
